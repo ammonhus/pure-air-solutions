@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans text-gray-800 antialiased;
+    background-color: #F8F5F0;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-serif;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-navy-700 text-white font-semibold rounded-lg
+           hover:bg-navy-800 active:bg-navy-900 transition-all duration-200
+           shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0
+           focus:outline-none focus:ring-2 focus:ring-navy-700 focus:ring-offset-2;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 border-2 border-navy-700 text-navy-700 font-semibold rounded-lg
+           hover:bg-navy-700 hover:text-white active:bg-navy-800 transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-navy-700 focus:ring-offset-2;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 border-2 border-white text-white font-semibold rounded-lg
+           hover:bg-white hover:text-navy-700 transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-navy-700;
+  }
+
+  .btn-accent {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-green-500 text-white font-semibold rounded-lg
+           hover:bg-green-600 active:bg-green-700 transition-all duration-200
+           shadow-md hover:shadow-lg hover:-translate-y-0.5
+           focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2;
+  }
+
+  .section-heading {
+    @apply text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-navy-700 leading-tight;
+  }
+
+  .section-subheading {
+    @apply text-lg md:text-xl text-gray-600 leading-relaxed max-w-2xl;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-200 hover:-translate-y-1 cursor-pointer;
+  }
+
+  .glass-card {
+    @apply rounded-2xl border border-white/10 backdrop-blur-md;
+    background: rgba(255, 255, 255, 0.07);
+  }
+
+  .glass-card-light {
+    @apply rounded-2xl border border-navy-700/10 backdrop-blur-sm;
+    background: rgba(248, 245, 240, 0.8);
+  }
+
+  .section-pad {
+    @apply py-20 md:py-28;
+  }
+
+  .container-pad {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 rounded-lg border border-gray-200 bg-white text-gray-800
+           focus:outline-none focus:ring-2 focus:ring-navy-500 focus:border-transparent
+           placeholder:text-gray-400 transition-all duration-200;
+  }
+
+  .label {
+    @apply block text-sm font-medium text-gray-700 mb-1.5;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .bg-noise {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  }
+
+  .mesh-gradient {
+    background-color: #0e2d50;
+    background-image:
+      radial-gradient(at 47% 33%, rgba(27, 79, 138, 0.8) 0px, transparent 59%),
+      radial-gradient(at 82% 65%, rgba(14, 45, 80, 0.9) 0px, transparent 55%),
+      radial-gradient(at 10% 70%, rgba(74, 124, 89, 0.15) 0px, transparent 50%);
+  }
+}
+
+/* Particle canvas */
+#particle-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #F8F5F0; }
+::-webkit-scrollbar-thumb { background: #9eb9d9; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #1B4F8A; }
+
+/* Smooth page transitions */
+.page-enter {
+  opacity: 0;
+  transform: translateY(10px);
+}
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 400ms, transform 400ms;
+}

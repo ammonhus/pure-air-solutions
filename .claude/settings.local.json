@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gh api *)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "PowerShell(Get-ChildItem \"$env:APPDATA\\\\Claude\" -Recurse -ErrorAction SilentlyContinue | Select-Object FullName -First 20)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5173)",
+      "PowerShell(ngrok config add-authtoken 3DJt5yTmBh2sqd1wb7UxCa05PGM_2j5p4UGwZz94YSn9Runns 2>&1)",
+      "PowerShell(& \"$env:LOCALAPPDATA\\\\ngrok\\\\ngrok.exe\" config add-authtoken 3DJt5yTmBh2sqd1wb7UxCa05PGM_2j5p4UGwZz94YSn9Runns 2>&1)",
+      "Bash(pkill -f \"vite\")",
+      "Bash(npm run *)",
+      "Bash(python .claude/skills/ui-ux-pro-max/scripts/search.py \"air purification health technology service landing page professional trustworthy\" --design-system -p \"Pure Air Solutions\")",
+      "Bash(python .claude/skills/ui-ux-pro-max/scripts/search.py \"animation accessibility hover loading reduced motion\" --domain ux)",
+      "Bash(python .claude/skills/ui-ux-pro-max/scripts/search.py \"healthcare professional clean trustworthy serif\" --domain typography)",
+      "Bash(python .claude/skills/ui-ux-pro-max/scripts/search.py \"landing hero social-proof testimonial cta\" --domain landing)",
+      "Bash(python .claude/skills/ui-ux-pro-max/scripts/search.py \"layout responsive form react\" --stack react)",
+      "Bash(npm install *)",
+      "Bash(node -e \"const l = require\\('./node_modules/lucide-react/dist/cjs/lucide-react.js'\\); const keys = Object.keys\\(l\\).filter\\(k => /virus|bio|germ|micro|handshake/i.test\\(k\\)\\); console.log\\(keys\\)\")",
+      "PowerShell(irm https://raw.githubusercontent.com/JuliusBrussee/caveman/main/install.ps1 | iex)",
+      "PowerShell($tmp = \"$env:TEMP\\\\caveman_install.ps1\"; irm https://raw.githubusercontent.com/JuliusBrussee/caveman/main/install.ps1 -OutFile $tmp; & pwsh -File $tmp)",
+      "mcp__Claude_Preview__preview_start",
+      "PowerShell(npx -y skills add https://github.com/affaan-m/everything-claude-code --skill strategic-compact)",
+      "Bash(gh auth *)",
+      "PowerShell(gh auth status 2>&1)"
+    ]
+  }
+}
